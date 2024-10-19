@@ -23,3 +23,5 @@ elif choices == 2 and computer_choice == 0:
     print("You Lose")
 elif choices == 2 and computer_choice == 1:
     print("You Win")
+else:
+    print("You lose!")
