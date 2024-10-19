@@ -13,13 +13,13 @@ if choices == computer_choice:
     print("It's a draw")
 elif choices == 0 and computer_choice == 1:
     print("You Lose")
-elif choices  == 0 and computer_choice == 2:
+elif choices == 0 and computer_choice == 2:
     print("You Win")
-elif choices  == 1 and computer_choice == 0:
+elif choices == 1 and computer_choice == 0:
     print("You Win")
-elif choices  == 1 and computer_choice == 2:
+elif choices == 1 and computer_choice == 2:
     print("You Lose")
-elif choices  == 2 and computer_choice == 0:
+elif choices == 2 and computer_choice == 0:
     print("You Lose")
-elif choices  == 2 and computer_choice == 1:
+elif choices == 2 and computer_choice == 1:
     print("You Win")
