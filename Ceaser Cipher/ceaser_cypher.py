@@ -8,33 +8,21 @@ text = input("Type your message: \n").lower()
 shift = int(input("Enter the shift number: \n"))
 
 
-def encrypt(original_text, shift_number):
-    encrypted_text = ""
-    for i in text:
+def caesar(original_text, shift_number, encode_or_decode):
+    output_text = ""
+
+    # If decoding, reverse the shift once here, not in every loop iteration
+    if encode_or_decode == "decode":
+        shift_number *= -1
+
+    for i in original_text:
         if i in alphabet:
             position = alphabet.index(i)
-            new_position = (position + shift) % len(alphabet)
-            encrypted_text += alphabet[new_position]
+            new_position = (position + shift_number) % len(alphabet)
+            output_text += alphabet[new_position]
         else:
-            encrypted_text += i
-    print(f"Your encrypted message is: {encrypted_text}")
+            output_text += i  # Handle non-alphabet characters
+    print(f"Your message is: {output_text}")
 
 
-def decrypt(encrypted_text, shift_number):
-    decrypted_text = ""
-    for i in text:
-        if i in alphabet:
-            position = alphabet.index(i)
-            new_position = (position - shift) % len(alphabet)
-            decrypted_text += alphabet[new_position]
-        else:
-            decrypted_text += i
-    print(f"Your decrypted message is: {decrypted_text}")
-
-
-if direction == "encode":
-    encrypt(original_text=text, shift_number=shift)
-elif direction == "decode":
-    decrypt(encrypted_text=text, shift_number=shift)
-else:
-    print("You have entered the wrong key!")
+caesar(original_text=text, shift_number=shift, encode_or_decode=direction)
