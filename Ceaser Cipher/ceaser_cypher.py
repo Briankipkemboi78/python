@@ -1,8 +1,7 @@
 print("Welcome to Ceaser Cypher!")
 
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
-            'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
-            'q', 'r', 's', 't', 'u','v', 'w', 'x', 'y', 'z']
+            'v', 'w', 'x', 'y', 'z']
 
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
 text = input("Type your message: \n").lower()
@@ -14,7 +13,7 @@ def encrypt(original_text, shift_number):
     for i in text:
         if i in alphabet:
             position = alphabet.index(i)
-            new_position = (position + shift) % 26
+            new_position = (position + shift) % len(alphabet)
             encrypted_text += alphabet[new_position]
         else:
             encrypted_text += i
@@ -26,7 +25,7 @@ def decrypt(encrypted_text, shift_number):
     for i in text:
         if i in alphabet:
             position = alphabet.index(i)
-            new_position = (position - shift) % 26
+            new_position = (position - shift) % len(alphabet)
             decrypted_text += alphabet[new_position]
         else:
             decrypted_text += i
