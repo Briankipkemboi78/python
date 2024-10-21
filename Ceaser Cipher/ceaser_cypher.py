@@ -10,7 +10,7 @@ text = input("Type your message: \n").lower()
 shift = int(input("Enter the shift number: \n"))
 
 
-def encrypt(text, shift):
+def encrypt(original_text, shift_number):
     encrypted_text = ""
     for i in text:
         if i in alphabet:
@@ -22,7 +22,7 @@ def encrypt(text, shift):
     print(f"Your encrypted message is: {encrypted_text}")
 
 
-def decrypt(text, shift):
+def decrypt(encrypted_text, shift_number):
     decrypted_text = ""
     for i in text:
         if i in alphabet:
@@ -35,8 +35,8 @@ def decrypt(text, shift):
 
 
 if direction == "encode":
-    encrypt(text, shift)
+    encrypt(original_text=text, shift_number=shift)
 elif direction == "decode":
-    decrypt(text,shift)
+    decrypt(encrypted_text=text, shift_number=shift)
 else:
     print("You have entered the wrong key!")
