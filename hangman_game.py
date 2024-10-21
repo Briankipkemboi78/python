@@ -17,6 +17,9 @@ correct_letters = []
 while not game_over:
     user_guess = input("Please guess a letter \n").lower()
 
+    if user_guess in correct_letters:
+        print(f"You've already guessed {user_guess}")
+
     display = ""
 
     for letter in chosen_word:
