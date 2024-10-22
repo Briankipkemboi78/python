@@ -3,10 +3,6 @@ print("Welcome to Ceaser Cypher!")
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
             'v', 'w', 'x', 'y', 'z']
 
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
-text = input("Type your message: \n").lower()
-shift = int(input("Enter the shift number: \n"))
-
 
 def caesar(original_text, shift_number, encode_or_decode):
     output_text = ""
@@ -24,5 +20,16 @@ def caesar(original_text, shift_number, encode_or_decode):
             output_text += i  # Handle non-alphabet characters
     print(f"Your message is: {output_text}")
 
+should_continue = True
 
-caesar(original_text=text, shift_number=shift, encode_or_decode=direction)
+while should_continue:
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+    text = input("Type your message: \n").lower()
+    shift = int(input("Enter the shift number: \n"))
+
+    caesar(original_text=text, shift_number=shift, encode_or_decode=direction)
+
+    opt = input("Type 'yes' if you want to go again. Otherwise type 'no'. \n").lower()
+    if opt == 'no':
+        should_continue = False
+        print("Goodbye!")
