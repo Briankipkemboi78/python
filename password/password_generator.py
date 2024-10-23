@@ -11,17 +11,6 @@ letters_nr = int(input("How many letter would you like in your password: \n"))
 symbols_nr = int(input("How many symbols would your like?\n"))
 numbers_nr = int(input("How many numbers would you like: \n"))
 
-# password = ""
-# for char in range(0, letters_nr):
-#     random_char = random.choice(letters)
-#     password += random_char
-# for sym in range(0, symbols_nr):
-#     random_symbol = random.choice(symbols)
-#     password += random_symbol
-# for num in range(0, numbers_nr):
-#     random_number = random.choice(numbers)
-#     password += random_number
-# print(password)
 
 password_list = []
 for char in range(0, letters_nr):
