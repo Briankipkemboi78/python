@@ -29,6 +29,8 @@ operand = {
 
 want_to_continue = True
 first_number = int(input("Enter the first digit: \n"))
+for symbol in operand:
+    print(symbol)
 
 while want_to_continue:
     operation = input("Enter the operation to carry out: \n")
