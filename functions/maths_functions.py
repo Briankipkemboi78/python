@@ -38,7 +38,7 @@ while want_to_continue:
 
     if operation in operand:
         result = operand[operation](first_number, second_number)
-        print(result)
+        print(f"{first_number} {operation} {second_number} = {result}")
 
     else:
         print("Invalid operation")
