@@ -27,5 +27,18 @@ operand = {
     "/": divide,
 }
 
+operator = "*"
+n1, n2 = 4, 8
+
+
+result = operand[operator](n1,n2)
+
+first_number = int(input("Enter the first digit: \n"))
+operation = input("Enter the operation to carry out: \n")
+second_number = int(input("Enter the second digit: \n"))
+
+operator  = operation
+n1, n2 =
+
 
 
