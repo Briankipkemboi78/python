@@ -27,18 +27,24 @@ operand = {
     "/": divide,
 }
 
-operator = "*"
-n1, n2 = 4, 8
-
-
-result = operand[operator](n1,n2)
-
+want_to_continue = True
 first_number = int(input("Enter the first digit: \n"))
-operation = input("Enter the operation to carry out: \n")
-second_number = int(input("Enter the second digit: \n"))
 
-operator  = operation
-n1, n2 =
+while want_to_continue:
+    operation = input("Enter the operation to carry out: \n")
+    second_number = int(input("Enter the second digit: \n"))
 
+    if operation in operand:
+        result = operand[operation](first_number, second_number)
+        print(result)
 
+    else:
+        print("Invalid operation")
 
+    to_continue = input("Do you want to continue, Type y for 'yes', n for 'no' \n")
+    if to_continue == 'y':
+        first_number = result
+
+    else:
+        print("Exiting the Calculator!")
+        want_to_continue = False
