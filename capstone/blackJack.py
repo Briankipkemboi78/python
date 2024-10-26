@@ -1,29 +1,37 @@
 import random
 
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-randon_numbers = random.sample(numbers, 2)
-computers_choice = [random.choice(numbers)]
-print(f"Your cards: {randon_numbers}")
-print(f"Computer's first card: {computers_choice}")
-
-def add(n1, n2):
-    result = n1 + n2
-    return result
+numbers = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 
-next_card = input("Type 'y' to get another card, type 'n' to pass: \n")
-if next_card == 'y':
-    new_card = random.choice(numbers)
-    computer_new_card = random.choice(numbers)
-    randon_numbers.append(new_card)
-    computers_choice.append(computer_new_card)
-    print(f"Your cards are: {randon_numbers}")
-    print(f"Computers cards are: {computers_choice}")
-else:
-    computer_new_card = random.choice(numbers)
-    computers_choice.append(computer_new_card)
-    print("You Passed")
-    print(f"Your cards are: {randon_numbers}")
-    print(f"Computers cards are: {computers_choice}")
+def deal_card():
+    numbers = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+    card = random.choice(numbers)
+    return card
 
+
+def calculate_score(cards):
+    if sum(cards) == 21 and len(cards) == 2:
+        return 0
+
+    if 11 in cards and sum(cards) > 21:
+        cards.remove(11)
+        cards.append(1)
+
+    return sum(cards)
+
+
+user_cards = []
+computer_card = []
+is_game_over = False
+
+for _ in range(2):
+    user_cards.append(deal_card())
+    computer_card.append(deal_card())
+
+user_score = calculate_score(user_cards)
+computer_score = calculate_score(computer_card)
+print(f"Your score is: {user_score} and your cards are: {user_cards}")
+print(f"Computer score: {computer_score}, computer cards: {computer_card}")
+
+if user_score == 0 or computer_score == 0 or user_score > 21:
+    is_game_over = True
