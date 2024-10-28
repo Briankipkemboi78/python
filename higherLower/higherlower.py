@@ -1,6 +1,6 @@
 import random
 from game_data import data
-from art import logo
+from art import logo, vs
 
 
 # Create a function that generates a random account
@@ -41,7 +41,7 @@ def play_game():
             account_b = get_accounts()
 
         print(f"Compare A: {format_data(account_a)}")
-        print("vs")
+        print(vs)
         print(f"Compare B: {format_data(account_b)}")
 
         guess = input("Who has more followers? Type 'A' or 'B': \n").lower()
