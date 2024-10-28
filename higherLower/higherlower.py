@@ -10,6 +10,7 @@ def get_accounts():
 
 
 def format_data(account):
+    """ Format the data to readable format. """
     name = account['name']
     description = account['description']
     country = account['country']
@@ -19,6 +20,7 @@ def format_data(account):
 
 # Check the two random accounts and compare the number of followers
 def check_answer(guess, a_followers, b_followers):
+    """ Check the guess vs the correct answer."""
     if a_followers > b_followers:
         return guess == "a"
     else:
