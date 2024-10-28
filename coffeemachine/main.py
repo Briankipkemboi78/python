@@ -38,7 +38,8 @@ def check_resources():
     formatted_resources = "\n".join([
         f"water: {resources['water']}ml",
         f"milk: {resources['milk']}ml",
-        f"coffee: {resources['coffee']}gm"
+        f"coffee: {resources['coffee']}gm",
+        f"profit: ${profit:.2f}"
     ])
     return formatted_resources
 
