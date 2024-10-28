@@ -30,7 +30,6 @@ def play_game():
 
     score = 0
     game_should_continue = True
-    account_a = get_accounts()
     account_b = get_accounts()
 
     while game_should_continue:
