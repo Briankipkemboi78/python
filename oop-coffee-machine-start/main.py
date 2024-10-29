@@ -23,6 +23,7 @@ while is_on:
 
     elif choice == "report":
         coffe_maker.report()
+        money_machine.report()
 
     else:
         drink = menu.find_drink(choice)
