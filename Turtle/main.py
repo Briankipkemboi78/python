@@ -16,3 +16,4 @@ while num_sides <= 10:
 
 screen = Screen()
 screen.exitonclick()
+ 
