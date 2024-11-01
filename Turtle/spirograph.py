@@ -14,13 +14,14 @@ def random_color():
     return r, g, b
 
 
-circles = 36
+circles = 72
 
 for _ in range(circles):
     tim.pensize(2)
     tim.color(random_color())
     tim.circle(100)
-    tim.right(360 / circles)
+    current_heading = tim.heading()
+    tim.setheading(current_heading + 5)
 
 
 
