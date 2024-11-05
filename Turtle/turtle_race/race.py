@@ -2,43 +2,49 @@ import turtle
 import random
 from turtle import Turtle, Screen
 
-
+# Initialize race settings
 is_race_on = False
 screen = Screen()
 screen.setup(width=700, height=500)
 
-
 # Define color names and hex codes
-color_names = ["firebrick", "darkmagenta", "darkslateblue", "darkslategray", "maroon", "darkgreen"]
-color_hex = ["#B22222", "#8B008B", "#483D8B", "#2F4F4F", "#800000", "#006400"]
-y_position = [-150, -90, -30, 30, 90, 150]
+colors = ["red", "orange", "yellow", "green", "blue", "purple"]
+y_positions = [-150, -90, -30, 30, 90, 150]
 
 # Create turtles and position them on the screen
-turtles = []
-for turtle_index in range(6):
-    new_turt = Turtle(shape="turtle")
-    new_turt.color(color_hex[turtle_index])  # Set color using hex code
-    new_turt.penup()
-    new_turt.goto(-300, y_position[turtle_index])
-    turtles.append(new_turt)
+all_turtles = []
+for index in range(6):
+    new_turtle = Turtle(shape="turtle")
+    new_turtle.color(colors[index])  # Set color using hex code
+    new_turtle.penup()
+    new_turtle.goto(-300, y_positions[index])
+    all_turtles.append(new_turtle)
 
-# Display the list of color names to the user and prompt for bet
-color_options = "\n".join(color_names)
+
 user_bet = screen.textinput(
-    title="Make your Bet",
-    prompt=f"Which turtle will win the race? Enter a color from the options below:\n{color_options}"
+    title="Make Your Bet",
+    prompt=f"Which turtle will win the race? Enter a color from the options below:\n{colors}"
 ).lower()
 
+# Start the race if the user made a bet
 if user_bet:
     is_race_on = True
 
+# Run the race
 while is_race_on:
-    for turtle in turtles:
-        random_distance = random.randint(0,10)
+    for turtle in all_turtles:
+        if turtle.xcor() > 300:
+            winning_color = turtle.pencolor()
+
+            if winning_color == user_bet:
+                print(f"You've won! The {winning_color} turtle is the winner!")
+            else:
+                print(f"You've lost! The {winning_color} turtle is the winner.")
+            is_race_on = False  # Stop the race
+            break  # Exit the for loop once we have a winner
+
+        random_distance = random.randint(0, 10)
         turtle.forward(random_distance)
 
-
-
-
-
+# Keep the window open until clicked
 screen.exitonclick()
