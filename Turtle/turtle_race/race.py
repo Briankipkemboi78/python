@@ -16,11 +16,11 @@ y_position = [-150, -90, -30, 30, 90, 150]
 # Create turtles and position them on the screen
 turtles = []
 for turtle_index in range(6):
-    tim = Turtle(shape="turtle")
-    tim.color(color_hex[turtle_index])  # Set color using hex code
-    tim.penup()
-    tim.goto(-300, y_position[turtle_index])
-    turtles.append(tim)
+    new_turt = Turtle(shape="turtle")
+    new_turt.color(color_hex[turtle_index])  # Set color using hex code
+    new_turt.penup()
+    new_turt.goto(-300, y_position[turtle_index])
+    turtles.append(new_turt)
 
 # Display the list of color names to the user and prompt for bet
 color_options = "\n".join(color_names)
@@ -31,6 +31,11 @@ user_bet = screen.textinput(
 
 if user_bet:
     is_race_on = True
+
+while is_race_on:
+    for turtle in turtles:
+        random_distance = random.randint(0,10)
+        turtle.forward(random_distance)
 
 
 
