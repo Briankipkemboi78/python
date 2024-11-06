@@ -8,7 +8,7 @@ screen.bgcolor("black")
 screen.title("Snake Game")
 
 
-x_positions = [-60, -40, -20]
+x_positions = [-40, -20, 0]
 
 # Create turtles and position them on the screen
 all_turtles = []
