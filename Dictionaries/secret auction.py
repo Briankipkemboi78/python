@@ -1,1 +1,1 @@
-print("Welcome to the Secret Auction")
+print("Welcome to the Secre//t Auction")

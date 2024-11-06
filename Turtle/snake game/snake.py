@@ -15,7 +15,6 @@ class Snake:
         self.segments = []
         self.create_snake()
         self.head = self.segments[0]
-        self.move()
 
     def create_snake(self):
         for position in STARTING_POSITIONS:
@@ -26,7 +25,7 @@ class Snake:
             new_turtle.turtlesize(stretch_wid=0.5, stretch_len=0.5)
             self.segments.append(new_turtle)
 
-    def move(self):
+    def move(self) -> object:
         for seg_num in range(len(self.segments) - 1, 0, -1):
             new_x = self.segments[seg_num - 1].xcor()
             new_y = self.segments[seg_num - 1].ycor()
