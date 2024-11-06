@@ -1,8 +1,8 @@
 import turtle
 from turtle import Turtle
 
-STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
-MOVE_DISTANCE = 20
+STARTING_POSITIONS = [(0, 0), (-10, 0), (-20, 0)]
+MOVE_DISTANCE = 10
 UP = 90
 DOWN = 270
 LEFT = 180
@@ -23,6 +23,7 @@ class Snake:
             new_turtle.color("white")  # Set color using hex code
             new_turtle.penup()
             new_turtle.goto(position)
+            new_turtle.turtlesize(stretch_wid=0.5, stretch_len=0.5)
             self.segments.append(new_turtle)
 
     def move(self):
