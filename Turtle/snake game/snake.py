@@ -18,12 +18,19 @@ class Snake:
 
     def create_snake(self):
         for position in STARTING_POSITIONS:
-            new_turtle = Turtle(shape="square")
-            new_turtle.color("white")  # Set color using hex code
-            new_turtle.penup()
-            new_turtle.goto(position)
-            new_turtle.turtlesize(stretch_wid=0.5, stretch_len=0.5)
-            self.segments.append(new_turtle)
+            self.add_segment(position)
+
+
+    def add_segment(self,position):
+        new_turtle = Turtle(shape="square")
+        new_turtle.color("white")  # Set color using hex code
+        new_turtle.penup()
+        new_turtle.goto(position)
+        new_turtle.turtlesize(stretch_wid=0.5, stretch_len=0.5)
+        self.segments.append(new_turtle)
+
+    def extend(self):
+        self.add_segment(self.segments[-1].position())
 
     def move(self) -> object:
         for seg_num in range(len(self.segments) - 1, 0, -1):
