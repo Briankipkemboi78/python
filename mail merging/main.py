@@ -1,6 +1,3 @@
-#TODO: Create a letter using starting_letter.txt 
-
-
 PLACEHOLDER = "[name]"
 
 with open("./Input/Names/invited_names.txt") as names_file:
