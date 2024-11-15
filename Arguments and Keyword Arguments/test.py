@@ -75,7 +75,9 @@ fruits = ['Apple', 'Pear', 'Orange', 'Banana']
 for item in fruits:
     listbox.insert(fruits.index(item), item)
 
-listbox.bind
+listbox.bind("<<ListboxSelect>>", listbox_used)
+listbox.pack()
+
 
 
 
