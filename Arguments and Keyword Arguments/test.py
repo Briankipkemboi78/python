@@ -66,6 +66,17 @@ radiobutton2 = Radiobutton(text="Option2", value=2, variable=radio_state, comman
 radiobutton1.pack()
 radiobutton2.pack()
 
+# listbox
+def listbox_used(event):
+    print(listbox.get(listbox.curselection()))
+
+listbox = Listbox(height=4)
+fruits = ['Apple', 'Pear', 'Orange', 'Banana']
+for item in fruits:
+    listbox.insert(fruits.index(item), item)
+
+listbox.bind
+
 
 
 window.mainloop()
