@@ -7,8 +7,7 @@ nato_dict = {row.letter: row.code for (index, row) in data.iterrows()}
 user_name = input("Please enter your name: \n").upper()
 splitted_name = list(user_name)
 
-
-# your_name = {letter: nato_dict[letter] for letter in splitted_name if letter in nato_dict} #This gets the letter and its code
+# your_name = {letter: nato_dict[letter] for letter in splitted_name if letter in nato_dict} # This gets the letter and its code
 your_name = [nato_dict[letter] for letter in splitted_name if letter in nato_dict]
 
 print(your_name)
