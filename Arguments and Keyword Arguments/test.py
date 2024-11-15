@@ -56,7 +56,11 @@ checked_state.get()
 checkbutton.pack()
 
 
-def radio_used()
+def radio_used():
+    print(radio_state.get())
+
+radio_state =  IntVar()
+radiobutton1 = Radiobutton(text="Option1", value = 1, variable=radio_state, command=radio_used)
 
 
 
