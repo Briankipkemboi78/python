@@ -1,16 +1,22 @@
 from tkinter import *
 
+
+def button_clicked():
+    print("I got tapped")
+    new_text = input.get()
+    my_label.config(text=new_text)
+
 window = Tk()
 window.title("My app")
 window.minsize(width=500, height=300)
+window.config(padx=30, pady=30)
 
 #Label
 my_label = Label(text="I am What I am", font=("Arial", 24, "bold"))
-my_label.config(text="New Text")
 my_label.grid(column = 0, row = 0)
 
 #Button
-button = Button(text="Click here")
+button = Button(text="Click here", command=button_clicked)
 button.grid(column = 1, row = 1)
 
 new_button = Button(text="New Button")
