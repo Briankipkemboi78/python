@@ -9,7 +9,7 @@ SAGE = "#629584"
 TEAL = "#387478"
 GRADIENT = "#E2F1E7"
 FONT_NAME = "Courier"
-WORK_MIN = 1
+WORK_MIN = 25
 SHORT_BREAK_MIN = 1
 LONG_BREAK_MIN = 20
 reps = 0
@@ -53,7 +53,11 @@ def count_down(count):
         window.after(1000, count_down, count - 1)
     else:
         start_timer()
-
+        mark = ""
+        work_sessions = math.floor(reps/2)
+        for _ in range(work_sessions):
+            mark += "✓"
+        check_entry.config(text=mark)
 
 
 # ---------------------------- UI SETUP ------------------------------- #
@@ -81,7 +85,7 @@ reset_button = Button(text="Reset", bg=SAGE, fg=GRADIENT, font=(FONT_NAME, 12), 
 reset_button.grid(column=2, row=2)
 
 # Entry
-check_entry = Label(text="✓", bg=GREENISH, fg=GRADIENT)
+check_entry = Label(bg=GREENISH, fg=GRADIENT)
 check_entry.grid(column=1,row=3)
 
 
