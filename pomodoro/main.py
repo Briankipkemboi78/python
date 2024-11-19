@@ -9,7 +9,7 @@ SAGE = "#629584"
 TEAL = "#387478"
 GRADIENT = "#E2F1E7"
 FONT_NAME = "Courier"
-WORK_MIN = 25
+WORK_MIN = 1
 SHORT_BREAK_MIN = 1
 LONG_BREAK_MIN = 20
 reps = 0
@@ -29,7 +29,7 @@ def start_timer():
         text_label.config( text="Break")
         count_down(long_break_sec)
     elif reps % 2 == 0:
-        text_label.config( text="Break")
+        text_label.config( text="Break", fg=GREEN)
         count_down(short_break_sec)
     else:
         text_label.config(text="Work")
