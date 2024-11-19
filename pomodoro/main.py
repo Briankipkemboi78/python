@@ -13,8 +13,17 @@ WORK_MIN = 25
 SHORT_BREAK_MIN = 1
 LONG_BREAK_MIN = 20
 reps = 0
+timer = None
 
-# ---------------------------- TIMER RESET ------------------------------- # 
+# ---------------------------- TIMER RESET ------------------------------- #
+def reset_timer():
+    window.after_cancel(timer)
+    canvas.itemconfig(timer_text, text="00:00", fill='white', font=(FONT_NAME, 28))
+    text_label.config(text="Timer", font=(FONT_NAME, 40, "bold"), bg=GREENISH, fg=TEAL)
+    check_entry.config(text="")
+    global reps
+    reps = 0
+
 
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 
@@ -50,7 +59,8 @@ def count_down(count):
 
     canvas.itemconfig(timer_text, text=f"{count_min}:{count_sec}")
     if count > 0:
-        window.after(1000, count_down, count - 1)
+        global timer
+        timer = window.after(1000, count_down, count - 1)
     else:
         start_timer()
         mark = ""
@@ -81,7 +91,7 @@ text_label.grid(column=1, row=0)
 start_button = Button(text="Start", bg=SAGE, fg=GRADIENT, font=(FONT_NAME, 12), highlightthickness=0, command=start_timer)
 start_button.grid(column=0, row=2)
 
-reset_button = Button(text="Reset", bg=SAGE, fg=GRADIENT, font=(FONT_NAME, 12), highlightthickness=0)
+reset_button = Button(text="Reset", bg=SAGE, fg=GRADIENT, font=(FONT_NAME, 12), highlightthickness=0, command=reset_timer)
 reset_button.grid(column=2, row=2)
 
 # Entry
