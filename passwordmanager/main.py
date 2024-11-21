@@ -28,11 +28,11 @@ password_label.grid(column=0, row=3)
 website_entry = Entry(width=35)
 website_entry.grid(column=1, row=1, columnspan=2)
 
-#-----Email/Username-
+#-----Email/Username
 website_entry = Entry(width=35)
 website_entry.grid(column=1, row=2, columnspan=2)
 
-#----Password-
+#----Password
 website_entry = Entry(width=21)
 website_entry.grid(column=1, row=3)
 
