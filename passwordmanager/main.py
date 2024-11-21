@@ -13,8 +13,8 @@ window.title("Password Manager")
 window.config(padx=20, pady=20)
 
 canvas = Canvas(width=200, height=200)
-paddlock = PhotoImage(file='logo.png')
-canvas.create_image(100,100, image=paddlock)
+logo_image = PhotoImage(file='logo.png')
+canvas.create_image(100,100, image=logo_image)
 canvas.grid(column=1, row=1)
 
 
