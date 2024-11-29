@@ -3,12 +3,17 @@ from tkinter import *
 import pandas as pd
 
 #----------------------Reading the data---------
+current_card = {}
+to_learn = {}
+
 try:
     data = pd.read_csv('data/words_to_learn.csv')
 except FileNotFoundError:
     original_file = pd.read_csv('data/french_words.csv')
     to_learn = original_file.to_dict(orient="records")
-    current_card = {}
+else:
+    to_learn = data.to_dict(orient="records")
+
 def next_card():
     global current_card, flip_timer
     window.after_cancel(flip_timer)
