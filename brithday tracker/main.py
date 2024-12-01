@@ -21,7 +21,7 @@ if today in birthday_dict:
     file_path = f"letter_templates/letter_{random.randint(1,3)}.txt"
     with open(file_path) as letter_file:
         contents = letter_file.read()
-        new_message = contents.replace("[NAME]", birthday_person["name"])
+        contents = contents.replace("[NAME]", birthday_person["name"])
 
     with smtplib.SMTP("smtp.gmail.com") as connection:
         connection.starttls()
@@ -29,7 +29,7 @@ if today in birthday_dict:
         connection.sendmail(
             from_addr=USER_MAIL,
             to_addrs=birthday_person["email"],
-            msg=f"Subject: Happy Birthday!\n\n {new_message}"
+            msg=f"Subject: Happy Birthday!\n\n {contents}"
         )
 
 
